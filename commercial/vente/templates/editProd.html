@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+     <form method="POST" action="/updateProd/{{produit.id}}">
+       {% csrf_token %}
+         <div>
+             <p>Nom:</p>
+             <div>
+                 <input type="text" name="name" value="{{produit.name}}">
+             </div>
+         </div>
+       <div>
+             <p>Prix de vente:</p>
+             <div>
+                 <input type="text" name="prix_vente" value="{{produit.prix_vente}}">
+             </div>
+         </div>
+       <div>
+             <p>Quantite disponible:</p>
+             <div>
+                 <input type="text" name="quantite_disponible" value="{{produit.quantite_disponible}}">
+             </div>
+         </div>
+           <div>
+             <p>Etat :</p>
+             <div>
+                 <input type="text" name="etat" value="{{produit.etat}}">
+             </div>
+         </div>
+          <div>
+             <p>Description:</p>
+             <div>
+                 <input type="text" name="description" value="{{produit.description}}">
+             </div>
+         </div>
+           <div>
+             <p>Categorie:</p>
+             <div>
+                 <input type="text" name="categorie" value="{{produit.categorie}}">
+             </div>
+         </div>
+          <div>
+             <br>
+              <button type="submit">Modifier Produit</button>
+         </div>
+     </form>
+</body>
+</html>

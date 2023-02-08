@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+   <form method="POST" action="/createCateg">
+       {% csrf_token %}
+       <div>
+           <div>
+               <p>Nom :</p>{{form.name}}
+           </div>
+           <div>
+               <p>Description :</p>{{form.description}}
+           </div>
+           <div>
+               <br>
+               <button type="submit">Ajouter Categorie</button>
+           </div>
+       </div>
+   </form>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+ <form method="POST" action="/createProd">
+       {% csrf_token %}
+       <div>
+           <div>
+               <p>Nom :</p>{{form_prod.name}}
+           </div>
+           <div>
+               <p>Prix de vente :</p>{{form_prod.prix_vente}}
+           </div>
+           <div>
+               <p>Quantite disponible :</p>{{form_prod.quantite_disponible}}
+           </div>
+            <div>
+               <p>Etat :</p>{{form_prod.etat}}
+           </div>
+           <div>
+               <p>Description :</p>{{form_prod.description}}
+           </div>
+            <div>
+               <p>Categorie :</p>{{form_prod.categorie}}
+           </div>
+           <div>
+               <br>
+               <button type="submit">Ajouter Produit</button>
+           </div>
+       </div>
+   </form>
+</body>
+</html>
